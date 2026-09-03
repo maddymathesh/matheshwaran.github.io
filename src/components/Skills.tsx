@@ -9,60 +9,58 @@ import {
   Monitor,
   Cloud,
   Palette,
+  CheckCircle2,
 } from "lucide-react";
 
 const iconMap: Record<string, React.ReactNode> = {
-  Code2: <Code2 className="h-5 w-5 text-sky-400" />,
-  Layout: <Layout className="h-5 w-5 text-indigo-400" />,
-  Server: <Server className="h-5 w-5 text-emerald-400" />,
-  Database: <Database className="h-5 w-5 text-amber-400" />,
-  Layers: <Layers className="h-5 w-5 text-cyan-400" />,
-  GitBranch: <GitBranch className="h-5 w-5 text-rose-400" />,
-  Monitor: <Monitor className="h-5 w-5 text-blue-400" />,
-  Cloud: <Cloud className="h-5 w-5 text-teal-400" />,
-  Palette: <Palette className="h-5 w-5 text-purple-400" />,
+  Code2: <Code2 className="h-4 w-4 text-[#0D5F4E]" />,
+  Layout: <Layout className="h-4 w-4 text-[#0D5F4E]" />,
+  Server: <Server className="h-4 w-4 text-[#0D5F4E]" />,
+  Database: <Database className="h-4 w-4 text-[#0D5F4E]" />,
+  Layers: <Layers className="h-4 w-4 text-[#0D5F4E]" />,
+  GitBranch: <GitBranch className="h-4 w-4 text-[#0D5F4E]" />,
+  Monitor: <Monitor className="h-4 w-4 text-[#0D5F4E]" />,
+  Cloud: <Cloud className="h-4 w-4 text-[#0D5F4E]" />,
+  Palette: <Palette className="h-4 w-4 text-[#0D5F4E]" />,
 };
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative mx-auto max-w-6xl px-6 py-20 sm:px-8 border-t border-white/10">
+    <section id="skills" className="relative mx-auto max-w-5xl px-6 py-20 sm:px-8 border-t border-[#E6E6E2]">
       {/* Section Header */}
       <div>
-        <div className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold tracking-wider uppercase text-sky-400">
-          <span>03 // Technical Competencies</span>
-        </div>
-        <h2 className="mt-2 font-mono text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        <h2 className="text-2xl font-semibold tracking-[-0.02em] text-[#121214] sm:text-3xl">
           Technical Skills
         </h2>
-        <p className="mt-2 max-w-xl text-sm text-slate-400 sm:text-base">
+        <p className="mt-1.5 max-w-xl text-sm text-[#5C5C64] sm:text-base">
           Core programming, web frameworks, databases, and development tooling acquired through coursework and practical building.
         </p>
       </div>
 
       {/* Skills Grid */}
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {skillCategories.map((category) => (
           <div
             key={category.id}
-            className="glass-card flex flex-col justify-between rounded-2xl p-6"
+            className="flex flex-col justify-between rounded-lg border border-[#E6E6E2] bg-white p-5 transition-colors hover:border-[#D5D5D0]"
           >
             <div>
               {/* Category Icon & Title */}
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-slate-900/80 shadow-sm">
-                  {iconMap[category.icon] || <Code2 className="h-5 w-5 text-sky-400" />}
+              <div className="flex items-center gap-2.5">
+                <div className="flex h-8 w-8 items-center justify-center rounded-md border border-[#E6E6E2] bg-[#FBFBF9]">
+                  {iconMap[category.icon] || <Code2 className="h-4 w-4 text-[#0D5F4E]" />}
                 </div>
-                <h3 className="font-mono text-base font-bold text-white">
+                <h3 className="text-sm font-semibold text-[#121214]">
                   {category.title}
                 </h3>
               </div>
 
-              {/* Skills Badges */}
-              <div className="mt-5 flex flex-wrap gap-2">
+              {/* Skills Badges (rounded-md 6px for sharp editorial density) */}
+              <div className="mt-4 flex flex-wrap gap-1.5">
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="inline-flex items-center rounded-lg border border-white/10 bg-slate-900/90 px-3 py-1.5 font-mono text-xs font-medium text-slate-200 transition-colors hover:border-sky-500/40 hover:text-white"
+                    className="inline-flex items-center rounded-md border border-transparent bg-[#F2F2EE] px-2.5 py-1 text-xs font-medium text-[#121214] transition-colors hover:border-[#D5D5D0]"
                   >
                     {skill}
                   </span>
@@ -74,9 +72,14 @@ export default function Skills() {
       </div>
 
       {/* Verified Skills Note */}
-      <div className="mt-8 rounded-xl border border-white/5 bg-slate-950/40 p-4 text-xs font-mono text-slate-400 flex items-center justify-between flex-wrap gap-2">
-        <span>● Verified academic &amp; training competencies</span>
-        <span className="text-slate-500">MERN Stack • Python • SQLite • Java • C</span>
+      <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-lg border border-[#BDE0D7] bg-[#EEF6F4] p-3.5 text-xs text-[#0D5F4E]">
+        <div className="flex items-center gap-2 font-medium">
+          <CheckCircle2 className="h-4 w-4 text-[#0D5F4E]" />
+          <span>Verified academic &amp; training competencies</span>
+        </div>
+        <span className="font-medium text-[#5C5C64]">
+          MERN Stack, Python, SQLite, Java, C
+        </span>
       </div>
     </section>
   );

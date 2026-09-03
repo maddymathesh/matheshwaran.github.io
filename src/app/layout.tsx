@@ -31,8 +31,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#070a11",
-  colorScheme: "dark",
+  themeColor: "#FBFBF9",
+  colorScheme: "light",
 };
 
 export default function RootLayout({
@@ -42,12 +42,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full antialiased scroll-smooth">
-      <body className="min-h-full flex flex-col bg-[#070a11] text-slate-100 font-sans selection:bg-sky-500/30 selection:text-white relative">
-        {/* Background Grid Pattern & Ambient Glow Lights */}
-        <div className="fixed inset-0 bg-grid-pattern pointer-events-none opacity-40 z-0" />
-        <div className="ambient-glow-top" />
-        <div className="ambient-glow-middle" />
-
+      <body className="min-h-full flex flex-col bg-[#FBFBF9] text-[#121214] font-sans selection:bg-[#EEF6F4] selection:text-[#0D5F4E] relative">
         <div className="relative z-10 flex min-h-screen flex-col">
           {children}
         </div>

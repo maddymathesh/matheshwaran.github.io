@@ -1,46 +1,41 @@
 import { educationData } from "@/lib/data";
-import { GraduationCap, Calendar, Award, Building, CheckCircle2, BookOpen } from "lucide-react";
+import { Calendar, Building, CheckCircle2 } from "lucide-react";
 
 export default function Education() {
   return (
-    <section id="education" className="relative mx-auto max-w-6xl px-6 py-20 sm:px-8 border-t border-white/10">
+    <section id="education" className="relative mx-auto max-w-5xl px-6 py-20 sm:px-8 border-t border-[#E6E6E2]">
       {/* Section Header */}
       <div>
-        <div className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold tracking-wider uppercase text-sky-400">
-          <span>02 // Academic History</span>
-        </div>
-        <h2 className="mt-2 font-mono text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        <h2 className="text-2xl font-semibold tracking-[-0.02em] text-[#121214] sm:text-3xl">
           Education Timeline
         </h2>
-        <p className="mt-2 max-w-xl text-sm text-slate-400 sm:text-base">
+        <p className="mt-1.5 max-w-xl text-sm text-[#5C5C64] sm:text-base">
           Academic progression from secondary school through undergraduate degree to current MCA studies.
         </p>
       </div>
 
       {/* Education Timeline */}
-      <div className="mt-12 relative border-l-2 border-white/10 ml-3 sm:ml-6 space-y-10">
+      <div className="mt-12 relative border-l border-[#E6E6E2] ml-2 sm:ml-4 space-y-8">
         {educationData.map((item) => {
           const isCurrent = item.status === "Currently Pursuing";
 
           return (
-            <div key={item.id} className="relative pl-7 sm:pl-10">
+            <div key={item.id} className="relative pl-6 sm:pl-8">
               {/* Timeline Marker Dot */}
               <div
-                className={`absolute -left-[9px] top-1.5 h-4 w-4 rounded-full border-2 ${
+                className={`absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full border-2 ${
                   isCurrent
-                    ? "border-sky-400 bg-sky-500 shadow-md shadow-sky-500/50"
-                    : "border-slate-500 bg-slate-800"
+                    ? "border-[#0D5F4E] bg-[#0D5F4E]"
+                    : "border-[#D5D5D0] bg-[#FBFBF9]"
                 }`}
-              >
-                {isCurrent && (
-                  <span className="absolute -inset-1 rounded-full bg-sky-400 opacity-40 animate-ping" />
-                )}
-              </div>
+              />
 
-              {/* Education Card */}
+              {/* Education Card (rounded-lg for dense sub-card) */}
               <div
-                className={`glass-card rounded-2xl p-6 sm:p-7 ${
-                  isCurrent ? "border-sky-500/30 shadow-lg shadow-sky-500/5" : ""
+                className={`rounded-lg border bg-white p-5 sm:p-6 transition-colors ${
+                  isCurrent
+                    ? "border-[#BDE0D7]"
+                    : "border-[#E6E6E2]"
                 }`}
               >
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
@@ -48,47 +43,47 @@ export default function Education() {
                     {/* Status Badge */}
                     <div className="flex items-center gap-2">
                       <span
-                        className={`rounded-full px-2.5 py-0.5 font-mono text-xs font-medium ${
+                        className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
                           isCurrent
-                            ? "bg-sky-950/80 border border-sky-500/40 text-sky-300"
-                            : "bg-emerald-950/80 border border-emerald-500/40 text-emerald-400"
+                            ? "bg-[#EEF6F4] text-[#0D5F4E] border border-[#BDE0D7]"
+                            : "bg-[#F2F2EE] text-[#5C5C64] border border-[#E6E6E2]"
                         }`}
                       >
                         {item.status}
                       </span>
 
-                      <span className="flex items-center gap-1 font-mono text-xs text-slate-400">
-                        <Calendar className="h-3 w-3" />
+                      <span className="flex items-center gap-1 text-xs text-[#7A7A82]">
+                        <Calendar className="h-3 w-3 text-[#7A7A82]" />
                         {item.duration}
                       </span>
                     </div>
 
                     {/* Degree Title */}
-                    <h3 className="mt-3 font-mono text-xl font-bold text-white sm:text-2xl">
+                    <h3 className="mt-2.5 text-lg font-semibold text-[#121214] sm:text-xl">
                       {item.degree}
                     </h3>
 
                     {/* Institution & University */}
-                    <div className="mt-1 text-sm font-semibold text-slate-300 flex flex-wrap items-center gap-2">
-                      <span className="flex items-center gap-1.5">
-                        <Building className="h-3.5 w-3.5 text-sky-400" />
+                    <div className="mt-1 text-xs sm:text-sm font-medium text-[#5C5C64] flex flex-wrap items-center gap-2">
+                      <span className="flex items-center gap-1.5 text-[#121214]">
+                        <Building className="h-3.5 w-3.5 text-[#0D5F4E]" />
                         {item.institution}
                       </span>
                       {item.university && (
-                        <span className="text-slate-400">({item.university})</span>
+                        <span className="text-[#7A7A82]">({item.university})</span>
                       )}
                       {item.board && (
-                        <span className="text-slate-400">({item.board})</span>
+                        <span className="text-[#7A7A82]">({item.board})</span>
                       )}
                     </div>
                   </div>
 
-                  {/* Grade / CGPA Pill */}
-                  <div className="rounded-xl border border-white/10 bg-slate-900/80 px-4 py-2 sm:text-right shrink-0">
-                    <span className="block text-[10px] font-mono uppercase tracking-wider text-slate-500">
-                      Performance / Score
+                  {/* Grade / Score Pill */}
+                  <div className="rounded-md border border-[#E6E6E2] bg-[#FBFBF9] px-3 py-1.5 sm:text-right shrink-0">
+                    <span className="block text-[10px] uppercase tracking-wider text-[#7A7A82]">
+                      Score
                     </span>
-                    <span className="font-mono text-sm font-bold text-sky-300 sm:text-base">
+                    <span className="text-xs sm:text-sm font-semibold text-[#0D5F4E]">
                       {item.grade}
                     </span>
                   </div>
@@ -96,10 +91,10 @@ export default function Education() {
 
                 {/* Highlights */}
                 {item.highlights && item.highlights.length > 0 && (
-                  <div className="mt-5 border-t border-white/10 pt-4 space-y-1.5">
+                  <div className="mt-4 border-t border-[#E6E6E2]/70 pt-3 space-y-1.5">
                     {item.highlights.map((h, index) => (
-                      <div key={index} className="flex items-start gap-2 text-xs text-slate-300">
-                        <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-sky-400" />
+                      <div key={index} className="flex items-start gap-2 text-xs text-[#5C5C64]">
+                        <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#0D5F4E]" />
                         <span className="leading-relaxed">{h}</span>
                       </div>
                     ))}

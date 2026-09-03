@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { personalInfo } from "@/lib/data";
-import { FileText, Download, Printer, CheckCircle2, ShieldCheck, Eye } from "lucide-react";
+import { Spotlight } from "@/components/ui/spotlight";
+import { ShieldCheck, Eye, Printer } from "lucide-react";
 import ResumeModal from "./ResumeModal";
 
 export default function ResumeSection() {
@@ -10,40 +11,43 @@ export default function ResumeSection() {
 
   return (
     <>
-      <section id="resume" className="relative mx-auto max-w-6xl px-6 py-20 sm:px-8 border-t border-white/10">
+      <section id="resume" className="relative mx-auto max-w-5xl px-6 py-20 sm:px-8 border-t border-[#E6E6E2]">
         {/* Section Header */}
         <div>
-          <div className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold tracking-wider uppercase text-sky-400">
-            <span>06 // Candidate Resume</span>
-          </div>
-          <h2 className="mt-2 font-mono text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-2xl font-semibold tracking-[-0.02em] text-[#121214] sm:text-3xl">
             Curriculum Vitae
           </h2>
-          <p className="mt-2 max-w-xl text-sm text-slate-400 sm:text-base">
+          <p className="mt-1.5 max-w-xl text-sm text-[#5C5C64] sm:text-base">
             Verified academic credentials, technical skills, projects, and contact information ready for review.
           </p>
         </div>
 
         {/* Resume Action Banner Card */}
-        <div className="mt-10 glass-panel rounded-3xl p-8 sm:p-10 border border-sky-500/30 shadow-2xl relative overflow-hidden">
+        <div className="relative overflow-hidden mt-10 rounded-xl border border-[#E6E6E2] bg-white p-6 sm:p-10 transition-colors hover:border-[#D5D5D0]">
+          {/* 21st.dev Spotlight cursor hover effect */}
+          <Spotlight
+            className="bg-[radial-gradient(circle_at_center,rgba(189,224,215,0.35)_0%,rgba(238,246,244,0.15)_50%,transparent_80%)]"
+            size={400}
+          />
+
           <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
             <div className="max-w-2xl space-y-3">
-              <div className="inline-flex items-center gap-2 rounded-full bg-sky-500/10 border border-sky-500/30 px-3 py-1 text-xs font-mono text-sky-300">
-                <ShieldCheck className="h-3.5 w-3.5 text-sky-400" />
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#BDE0D7] bg-[#EEF6F4] px-3 py-1 text-xs font-medium text-[#0D5F4E]">
+                <ShieldCheck className="h-3.5 w-3.5 text-[#0D5F4E]" />
                 <span>Verified Candidate Profile</span>
               </div>
-              <h3 className="font-mono text-2xl font-bold text-white sm:text-3xl">
+              <h3 className="text-xl font-semibold text-[#121214] sm:text-2xl">
                 {personalInfo.name} — Resume
               </h3>
-              <p className="text-sm leading-relaxed text-slate-300">
+              <p className="text-xs sm:text-sm leading-relaxed text-[#5C5C64]">
                 Prepared specifically for software engineering internships, graduate training programs, and entry-level full-stack positions. 
                 Contains verified education records from SRM Institute of Science &amp; Technology and Thiruvalluvar University, complete skill matrices, and practical project deliverables.
               </p>
 
-              <div className="pt-2 flex flex-wrap gap-x-6 gap-y-2 text-xs font-mono text-slate-400">
-                <span>● Format: Digital &amp; Printable PDF</span>
-                <span>● Status: Actively Seeking Roles</span>
-                <span>● Location: {personalInfo.location}</span>
+              <div className="pt-2 flex flex-wrap gap-x-6 gap-y-2 text-xs font-medium text-[#7A7A82]">
+                <span>Format: Digital &amp; Printable PDF</span>
+                <span>Status: Actively Seeking Roles</span>
+                <span>Location: {personalInfo.location}</span>
               </div>
             </div>
 
@@ -52,7 +56,7 @@ export default function ResumeSection() {
               <button
                 type="button"
                 onClick={() => setModalOpen(true)}
-                className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-sky-500/25 transition-all hover:brightness-110"
+                className="flex items-center justify-center gap-2 rounded-md bg-[#0D5F4E] px-5 py-2.5 text-xs sm:text-sm font-medium text-white transition-colors hover:bg-[#094538]"
               >
                 <Eye className="h-4 w-4" />
                 <span>View Full Resume</span>
@@ -61,9 +65,9 @@ export default function ResumeSection() {
               <button
                 type="button"
                 onClick={() => setModalOpen(true)}
-                className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-slate-900 px-6 py-3.5 text-sm font-semibold text-slate-200 transition-all hover:border-sky-500/40 hover:text-white"
+                className="flex items-center justify-center gap-2 rounded-md border border-[#E6E6E2] bg-white px-5 py-2.5 text-xs sm:text-sm font-medium text-[#121214] transition-colors hover:border-[#D5D5D0]"
               >
-                <Printer className="h-4 w-4 text-sky-400" />
+                <Printer className="h-4 w-4 text-[#5C5C64]" />
                 <span>Print / Save as PDF</span>
               </button>
             </div>

@@ -9,9 +9,7 @@ import {
   Copy,
   Check,
   Send,
-  Globe,
-  ArrowUpRight,
-  Sparkles,
+  ExternalLink,
 } from "lucide-react";
 
 export default function Contact() {
@@ -59,38 +57,37 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative mx-auto max-w-6xl px-6 py-20 sm:px-8 border-t border-white/10">
+    <section id="contact" className="relative mx-auto max-w-5xl px-6 py-20 sm:px-8 border-t border-[#E6E6E2]">
       {/* Section Header */}
       <div>
-        <div className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold tracking-wider uppercase text-sky-400">
-          <span>07 // Direct Communication</span>
-        </div>
-        <h2 className="mt-2 font-mono text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        <h2 className="text-2xl font-semibold tracking-[-0.02em] text-[#121214] sm:text-3xl">
           Get In Touch
         </h2>
-        <p className="mt-2 max-w-xl text-sm text-slate-400 sm:text-base">
+        <p className="mt-1.5 max-w-xl text-sm text-[#5C5C64] sm:text-base">
           Available for software engineering internships, campus placements, and entry-level full-stack development roles.
         </p>
       </div>
 
-      <div className="mt-12 grid gap-8 lg:grid-cols-12 lg:items-start">
+      <div className="mt-10 grid gap-8 lg:grid-cols-12 lg:items-start">
         {/* Left Column: Direct Contact Info & Socials */}
-        <div className="space-y-6 lg:col-span-5">
+        <div className="space-y-4 lg:col-span-5">
           {/* Email Card */}
-          <div className="glass-card rounded-2xl p-5">
+          <div className="rounded-xl border border-[#E6E6E2] bg-white p-5">
             <div className="flex items-center justify-between">
-              <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-slate-400">
+              <span className="text-xs font-semibold uppercase tracking-wider text-[#7A7A82]">
                 Work Email
               </span>
-              <span className="text-[11px] font-mono text-emerald-400">Primary</span>
+              <span className="rounded-full border border-[#BDE0D7] bg-[#EEF6F4] px-2 py-0.5 text-[11px] font-medium text-[#0D5F4E]">
+                Primary
+              </span>
             </div>
 
-            <div className="mt-2 flex items-center justify-between gap-2 rounded-xl border border-white/10 bg-slate-900/80 p-3">
+            <div className="mt-2.5 flex items-center justify-between gap-2 rounded-lg border border-[#E6E6E2] bg-[#FBFBF9] p-3">
               <div className="flex items-center gap-2.5 overflow-hidden">
-                <Mail className="h-4 w-4 shrink-0 text-sky-400" />
+                <Mail className="h-4 w-4 shrink-0 text-[#0D5F4E]" />
                 <a
                   href={`mailto:${personalInfo.email}`}
-                  className="truncate font-mono text-xs text-white hover:text-sky-300"
+                  className="truncate text-xs font-medium text-[#121214] hover:text-[#0D5F4E]"
                 >
                   {personalInfo.email}
                 </a>
@@ -98,33 +95,34 @@ export default function Contact() {
               <button
                 type="button"
                 onClick={handleCopyEmail}
-                className="shrink-0 rounded-lg bg-sky-500/10 px-2.5 py-1 text-xs font-mono text-sky-300 hover:bg-sky-500/20"
+                className="shrink-0 rounded-md bg-[#F2F2EE] px-2 py-1 text-xs font-medium text-[#5C5C64] transition-colors hover:bg-[#E6E6E2] hover:text-[#121214]"
                 title="Copy email"
+                aria-label="Copy email address"
               >
-                {copiedEmail ? <Check className="h-3.5 w-3.5 text-emerald-400" /> : <Copy className="h-3.5 w-3.5" />}
+                {copiedEmail ? <Check className="h-3.5 w-3.5 text-[#0D5F4E]" /> : <Copy className="h-3.5 w-3.5" />}
               </button>
             </div>
 
-            <div className="mt-2 text-[11px] text-slate-500 font-mono">
+            <div className="mt-2 text-xs text-[#7A7A82]">
               Alternate: {personalInfo.altEmail}
             </div>
           </div>
 
           {/* Phone Card */}
-          <div className="glass-card rounded-2xl p-5">
+          <div className="rounded-xl border border-[#E6E6E2] bg-white p-5">
             <div className="flex items-center justify-between">
-              <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-slate-400">
+              <span className="text-xs font-semibold uppercase tracking-wider text-[#7A7A82]">
                 Phone Number
               </span>
-              <span className="text-[11px] font-mono text-slate-400">Call / WhatsApp</span>
+              <span className="text-xs text-[#7A7A82]">Call / WhatsApp</span>
             </div>
 
-            <div className="mt-2 flex items-center justify-between gap-2 rounded-xl border border-white/10 bg-slate-900/80 p-3">
+            <div className="mt-2.5 flex items-center justify-between gap-2 rounded-lg border border-[#E6E6E2] bg-[#FBFBF9] p-3">
               <div className="flex items-center gap-2.5">
-                <Phone className="h-4 w-4 shrink-0 text-sky-400" />
+                <Phone className="h-4 w-4 shrink-0 text-[#0D5F4E]" />
                 <a
                   href={`tel:${personalInfo.phone}`}
-                  className="font-mono text-xs text-white hover:text-sky-300"
+                  className="text-xs font-medium text-[#121214] hover:text-[#0D5F4E]"
                 >
                   {personalInfo.phone}
                 </a>
@@ -132,30 +130,31 @@ export default function Contact() {
               <button
                 type="button"
                 onClick={handleCopyPhone}
-                className="shrink-0 rounded-lg bg-sky-500/10 px-2.5 py-1 text-xs font-mono text-sky-300 hover:bg-sky-500/20"
+                className="shrink-0 rounded-md bg-[#F2F2EE] px-2 py-1 text-xs font-medium text-[#5C5C64] transition-colors hover:bg-[#E6E6E2] hover:text-[#121214]"
                 title="Copy phone number"
+                aria-label="Copy phone number"
               >
-                {copiedPhone ? <Check className="h-3.5 w-3.5 text-emerald-400" /> : <Copy className="h-3.5 w-3.5" />}
+                {copiedPhone ? <Check className="h-3.5 w-3.5 text-[#0D5F4E]" /> : <Copy className="h-3.5 w-3.5" />}
               </button>
             </div>
           </div>
 
           {/* Location & Social Profiles */}
-          <div className="glass-panel rounded-2xl p-5 space-y-4">
-            <div className="flex items-center gap-2.5 text-xs text-slate-300">
-              <MapPin className="h-4 w-4 text-sky-400 shrink-0" />
-              <span>Location: <strong>{personalInfo.location}</strong></span>
+          <div className="rounded-xl border border-[#E6E6E2] bg-white p-5 space-y-4">
+            <div className="flex items-center gap-2.5 text-xs text-[#5C5C64]">
+              <MapPin className="h-4 w-4 text-[#0D5F4E] shrink-0" />
+              <span>Location: <strong className="text-[#121214]">{personalInfo.location}</strong></span>
             </div>
 
-            <div className="border-t border-white/10 pt-4 grid grid-cols-2 gap-3">
+            <div className="border-t border-[#E6E6E2]/70 pt-3 grid grid-cols-2 gap-2.5">
               <a
                 href={personalInfo.github}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-between rounded-xl border border-white/10 bg-slate-900/70 p-3 text-xs font-medium text-slate-200 hover:border-sky-500/40 hover:text-white"
+                className="flex items-center justify-between rounded-lg border border-[#E6E6E2] bg-[#FBFBF9] p-3 text-xs font-medium text-[#121214] transition-colors hover:border-[#D5D5D0]"
               >
                 <div className="flex items-center gap-2">
-                  <svg className="h-4 w-4 text-slate-300" viewBox="0 0 24 24" fill="currentColor">
+                  <svg className="h-4 w-4 text-[#5C5C64]" viewBox="0 0 24 24" fill="currentColor">
                     <path
                       fillRule="evenodd"
                       clipRule="evenodd"
@@ -164,33 +163,33 @@ export default function Contact() {
                   </svg>
                   <span>GitHub</span>
                 </div>
-                <ArrowUpRight className="h-3.5 w-3.5 text-slate-500" />
+                <ExternalLink className="h-3 w-3 text-[#7A7A82]" />
               </a>
 
               <a
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-between rounded-xl border border-white/10 bg-slate-900/70 p-3 text-xs font-medium text-slate-200 hover:border-sky-500/40 hover:text-white"
+                className="flex items-center justify-between rounded-lg border border-[#E6E6E2] bg-[#FBFBF9] p-3 text-xs font-medium text-[#121214] transition-colors hover:border-[#D5D5D0]"
               >
                 <div className="flex items-center gap-2">
-                  <svg className="h-4 w-4 text-slate-300" viewBox="0 0 24 24" fill="currentColor">
+                  <svg className="h-4 w-4 text-[#5C5C64]" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.48 1.48 0 1 0-.03-2.96 1.48 1.48 0 0 0 .03 2.96m1.39 9.74v-8.37H5.07v8.37h2.78Z" />
                   </svg>
                   <span>LinkedIn</span>
                 </div>
-                <ArrowUpRight className="h-3.5 w-3.5 text-slate-500" />
+                <ExternalLink className="h-3 w-3 text-[#7A7A82]" />
               </a>
             </div>
           </div>
         </div>
 
         {/* Right Column: Direct Message Form */}
-        <div className="glass-panel rounded-2xl p-6 sm:p-8 lg:col-span-7">
-          <h3 className="font-mono text-base font-bold text-white">
+        <div className="rounded-xl border border-[#E6E6E2] bg-white p-6 sm:p-8 lg:col-span-7">
+          <h3 className="text-base font-semibold text-[#121214]">
             Send a Direct Note
           </h3>
-          <p className="mt-1 text-xs text-slate-400">
+          <p className="mt-1 text-xs text-[#5C5C64]">
             Have an internship opening, entry-level opportunity, or project discussion? Fill in the details below.
           </p>
 
@@ -199,7 +198,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="contact-name"
-                  className="block font-mono text-[11px] font-medium text-slate-300 uppercase tracking-wider"
+                  className="block text-xs font-medium text-[#121214]"
                 >
                   Your Name *
                 </label>
@@ -210,14 +209,14 @@ export default function Contact() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="e.g. John Doe"
-                  className="mt-1.5 w-full rounded-xl border border-white/10 bg-slate-950/70 px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-600 focus:border-sky-500 focus:outline-none"
+                  className="mt-1.5 w-full rounded-lg border border-[#E6E6E2] bg-[#FBFBF9] px-3.5 py-2.5 text-xs sm:text-sm text-[#121214] placeholder-[#7A7A82] transition-colors focus:border-[#0D5F4E] focus:outline-none"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="contact-email"
-                  className="block font-mono text-[11px] font-medium text-slate-300 uppercase tracking-wider"
+                  className="block text-xs font-medium text-[#121214]"
                 >
                   Your Email *
                 </label>
@@ -228,7 +227,7 @@ export default function Contact() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="e.g. john@company.com"
-                  className="mt-1.5 w-full rounded-xl border border-white/10 bg-slate-950/70 px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-600 focus:border-sky-500 focus:outline-none"
+                  className="mt-1.5 w-full rounded-lg border border-[#E6E6E2] bg-[#FBFBF9] px-3.5 py-2.5 text-xs sm:text-sm text-[#121214] placeholder-[#7A7A82] transition-colors focus:border-[#0D5F4E] focus:outline-none"
                 />
               </div>
             </div>
@@ -236,7 +235,7 @@ export default function Contact() {
             <div>
               <label
                 htmlFor="contact-subject"
-                className="block font-mono text-[11px] font-medium text-slate-300 uppercase tracking-wider"
+                className="block text-xs font-medium text-[#121214]"
               >
                 Subject / Topic
               </label>
@@ -246,14 +245,14 @@ export default function Contact() {
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
                 placeholder="e.g. Software Engineering Internship Opportunity"
-                className="mt-1.5 w-full rounded-xl border border-white/10 bg-slate-950/70 px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-600 focus:border-sky-500 focus:outline-none"
+                className="mt-1.5 w-full rounded-lg border border-[#E6E6E2] bg-[#FBFBF9] px-3.5 py-2.5 text-xs sm:text-sm text-[#121214] placeholder-[#7A7A82] transition-colors focus:border-[#0D5F4E] focus:outline-none"
               />
             </div>
 
             <div>
               <label
                 htmlFor="contact-message"
-                className="block font-mono text-[11px] font-medium text-slate-300 uppercase tracking-wider"
+                className="block text-xs font-medium text-[#121214]"
               >
                 Message Details *
               </label>
@@ -264,18 +263,18 @@ export default function Contact() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Write your message here..."
-                className="mt-1.5 w-full rounded-xl border border-white/10 bg-slate-950/70 px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-600 focus:border-sky-500 focus:outline-none resize-none"
+                className="mt-1.5 w-full rounded-lg border border-[#E6E6E2] bg-[#FBFBF9] px-3.5 py-2.5 text-xs sm:text-sm text-[#121214] placeholder-[#7A7A82] transition-colors focus:border-[#0D5F4E] focus:outline-none resize-none"
               />
             </div>
 
             <button
               type="submit"
               disabled={sentStatus}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/20 transition-all hover:brightness-110 disabled:opacity-75"
+              className="flex w-full items-center justify-center gap-2 rounded-md bg-[#0D5F4E] py-2.5 text-xs sm:text-sm font-medium text-white transition-colors hover:bg-[#094538] disabled:opacity-75"
             >
               {sentStatus ? (
                 <>
-                  <Check className="h-4 w-4 text-emerald-300" />
+                  <Check className="h-4 w-4 text-white" />
                   <span>Preparing Email Client...</span>
                 </>
               ) : (
