@@ -55,7 +55,7 @@ export const personalInfo = {
   phone: "+91 6374759225",
   email: "r.matheshwaran.io@gmail.com",
   altEmail: "mrmatheshwaran17@gmail.com",
-  github: "https://github.com/maddymathesh",
+  github: "https://github.com/matheshwaran-io",
   linkedin: "https://www.linkedin.com/in/matheshwaran-io/",
   portfolio: "https://maddymathesh.github.io",
   languages: ["English", "Tamil"],
