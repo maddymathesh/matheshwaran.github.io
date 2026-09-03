@@ -1,104 +1,151 @@
-import { GraduationCap, MapPin, CheckCircle, Flame, Rocket } from "lucide-react";
+import Image from "next/image";
+import { personalInfo } from "@/lib/data";
+import {
+  GraduationCap,
+  MapPin,
+  Languages,
+  CheckCircle2,
+  Code2,
+  Database,
+  Layers,
+  Cpu,
+  ShieldCheck,
+} from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="relative mx-auto max-w-6xl px-6 py-20 sm:px-8">
+    <section id="about" className="relative mx-auto max-w-6xl px-6 py-20 sm:px-8 border-t border-white/10">
       {/* Section Header */}
       <div>
         <div className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold tracking-wider uppercase text-sky-400">
-          <span>04 // Background &amp; Philosophy</span>
+          <span>01 // Background &amp; Profile</span>
         </div>
         <h2 className="mt-2 font-mono text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-          About Mathesh
+          About Me
         </h2>
+        <p className="mt-2 max-w-xl text-sm text-slate-400 sm:text-base">
+          Academic foundation, development interests, and personal philosophy.
+        </p>
       </div>
 
       <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-start">
         {/* Left Column: Narrative */}
         <div className="space-y-5 text-base leading-relaxed text-slate-300 lg:col-span-7">
           <p>
-            I&apos;m currently in my final year of the Master of Computer Applications (MCA) program at{" "}
-            <span className="font-semibold text-white">SRM Institute of Science and Technology</span> in Chennai. 
-            Unlike typical academic trajectories, most of my practical engineering intuition was forged in the fire of running 
-            two independent live digital ventures alongside my degree.
+            I am an MCA student and BCA graduate with a deep interest in software development, 
+            full-stack web application development, databases, and problem solving. I am currently 
+            pursuing my <span className="font-semibold text-white">Master of Computer Applications (MCA)</span> at{" "}
+            <span className="font-semibold text-white">SRM Institute of Science and Technology</span> (2025–2027), 
+            having completed my <span className="font-semibold text-white">Bachelor of Computer Applications (BCA)</span> from{" "}
+            <span className="font-semibold text-white">Dr. M.G.R. Chockalingam Arts College, Arni</span> (affiliated with Thiruvalluvar University) with First Class honors.
           </p>
 
           <p>
-            Building <span className="text-white font-medium">Maddy BGMI Store</span> and{" "}
-            <span className="text-white font-medium">Maddy RecoveryHub</span> forced me to confront what happens after the code is pushed: 
-            handling real financial escrow handoffs, edge-case triage, server downtime alerts, and keeping paying users satisfied. 
-            That experience taught me that software engineering is about <span className="text-sky-300 font-medium">end-to-end reliability</span>, 
-            not just writing pretty functions.
+            My passion centers on <span className="text-sky-300 font-medium">building practical applications</span> and 
+            continuously learning modern technologies. Rather than remaining purely theoretical, I enjoy translating 
+            programming fundamentals in C, Java, Python, and JavaScript into real working software — from automated 
+            desktop and QR-based attendance utilities to full-stack web applications on the MERN stack.
           </p>
 
           <p>
-            That discipline translates directly into my university roles. As the Technical Lead for the{" "}
-            <span className="text-white font-medium">SRM Curious Bee</span> platform rebuild, I manage architectural 
-            decisions and weekly deliverables for a 14-person intern squad. Simultaneously, I collaborate on AI research 
-            tools like <span className="text-white font-medium">ReCollab</span> to break down academic silos across campus using Gemini.
+            I place strong emphasis on writing clean, readable code, designing structured database schemas (MongoDB, SQLite, PostgreSQL), 
+            and understanding end-to-end development flows. I am eager to contribute my skills to high-velocity software engineering 
+            teams as an intern, graduate trainee, or entry-level software developer.
           </p>
 
-          <p className="border-l-2 border-sky-500/80 pl-4 text-sm italic text-slate-400">
-            &ldquo;I am most interested in high-impact engineering teams where I can take total ownership of products 
-            from architecture through deployment and maintenance.&rdquo;
-          </p>
-        </div>
-
-        {/* Right Column: Quick Dossier & Highlights */}
-        <div className="glass-card rounded-2xl p-6 sm:p-7 lg:col-span-5 space-y-6">
-          <h3 className="font-mono text-sm font-bold uppercase tracking-wider text-sky-400">
-            Quick Dossier
-          </h3>
-
-          <div className="space-y-4 text-sm">
-            <div className="flex items-start gap-3">
-              <GraduationCap className="mt-0.5 h-4 w-4 shrink-0 text-sky-400" />
-              <div>
-                <span className="block font-semibold text-white">Education</span>
-                <span className="text-xs text-slate-400">
-                  MCA, SRM Institute of Science &amp; Technology (2023–2025)
-                </span>
+          {/* Core Areas of Interest */}
+          <div className="mt-6 rounded-2xl border border-white/10 bg-slate-900/60 p-5">
+            <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-sky-400">
+              Key Focus Areas
+            </h3>
+            <div className="mt-3 grid gap-3 sm:grid-cols-2 text-xs text-slate-300">
+              <div className="flex items-center gap-2">
+                <Code2 className="h-4 w-4 text-sky-400 shrink-0" />
+                <span>Full-Stack Web Application Development</span>
               </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-sky-400" />
-              <div>
-                <span className="block font-semibold text-white">Location &amp; Mobility</span>
-                <span className="text-xs text-slate-400">
-                  Chennai, India • Open to Global Remote &amp; Relocation
-                </span>
+              <div className="flex items-center gap-2">
+                <Database className="h-4 w-4 text-emerald-400 shrink-0" />
+                <span>Database Design &amp; Data Persistence</span>
               </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <Rocket className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
-              <div>
-                <span className="block font-semibold text-white">Current Focus</span>
-                <span className="text-xs text-slate-400">
-                  Full-Stack Systems, Next.js, PostgreSQL, AI Integration
-                </span>
+              <div className="flex items-center gap-2">
+                <Layers className="h-4 w-4 text-indigo-400 shrink-0" />
+                <span>Problem Solving &amp; Logic Building</span>
               </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <Flame className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" />
-              <div>
-                <span className="block font-semibold text-white">Leadership Experience</span>
-                <span className="text-xs text-slate-400">
-                  Technical Lead (14 Interns), MCA Section Coordinator
-                </span>
+              <div className="flex items-center gap-2">
+                <Cpu className="h-4 w-4 text-amber-400 shrink-0" />
+                <span>Modern Web Technologies &amp; Frameworks</span>
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="rounded-xl border border-white/5 bg-slate-900/60 p-4">
-            <div className="text-xs font-semibold text-slate-300">
-              Immediate Availability:
+        {/* Right Column: Quick Profile Card */}
+        <div className="glass-card rounded-2xl p-6 sm:p-7 lg:col-span-5 space-y-6">
+          <div className="flex items-center gap-4 border-b border-white/10 pb-5">
+            <div className="relative h-14 w-14 overflow-hidden rounded-full border-2 border-sky-500/30">
+              <Image
+                src={personalInfo.avatarUrl}
+                alt={personalInfo.name}
+                fill
+                sizes="56px"
+                className="object-cover object-top"
+              />
             </div>
-            <div className="mt-1 text-xs text-slate-400 leading-relaxed">
-              Actively interviewing for full-time full-stack software engineering roles and production development projects.
+            <div>
+              <h3 className="font-mono text-base font-bold text-white">
+                {personalInfo.name}
+              </h3>
+              <p className="text-xs text-slate-400">
+                Software Developer &amp; MCA Candidate
+              </p>
             </div>
+          </div>
+
+          <div className="space-y-3.5 text-xs font-mono">
+            <div className="flex items-start justify-between border-b border-white/5 pb-2">
+              <span className="text-slate-400">Current Degree</span>
+              <span className="font-semibold text-white text-right">MCA (2025–2027)</span>
+            </div>
+
+            <div className="flex items-start justify-between border-b border-white/5 pb-2">
+              <span className="text-slate-400">Current Institution</span>
+              <span className="font-semibold text-white text-right">SRM IST, Chennai</span>
+            </div>
+
+            <div className="flex items-start justify-between border-b border-white/5 pb-2">
+              <span className="text-slate-400">Undergraduate</span>
+              <span className="font-semibold text-white text-right">BCA, First Class (68.54%)</span>
+            </div>
+
+            <div className="flex items-start justify-between border-b border-white/5 pb-2">
+              <span className="text-slate-400">Location</span>
+              <span className="font-semibold text-white text-right">{personalInfo.location}</span>
+            </div>
+
+            <div className="flex items-start justify-between border-b border-white/5 pb-2">
+              <span className="text-slate-400">Languages</span>
+              <span className="font-semibold text-sky-400 text-right">{personalInfo.languages.join(", ")}</span>
+            </div>
+
+            <div className="flex items-start justify-between border-b border-white/5 pb-2">
+              <span className="text-slate-400">Nationality</span>
+              <span className="font-semibold text-white text-right">{personalInfo.nationality}</span>
+            </div>
+
+            <div className="flex items-start justify-between">
+              <span className="text-slate-400">Academic Attendance</span>
+              <span className="font-semibold text-emerald-400 text-right">95.3% (School Record)</span>
+            </div>
+          </div>
+
+          <div className="rounded-xl border border-white/5 bg-slate-900/80 p-4">
+            <div className="flex items-center gap-2 text-xs font-semibold text-white">
+              <ShieldCheck className="h-4 w-4 text-emerald-400" />
+              <span>Placement &amp; Internship Readiness</span>
+            </div>
+            <p className="mt-1 text-[11px] text-slate-400 leading-relaxed">
+              Actively seeking software engineering internships and entry-level full-stack positions with strong problem-solving orientation.
+            </p>
           </div>
         </div>
       </div>

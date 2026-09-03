@@ -1,9 +1,11 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import Work from "@/components/Work";
-import Stack from "@/components/Stack";
-import Experience from "@/components/Experience";
 import About from "@/components/About";
+import Education from "@/components/Education";
+import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
+import Certifications from "@/components/Certifications";
+import ResumeSection from "@/components/ResumeSection";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -13,10 +15,12 @@ export default function Home() {
       <Nav />
       <main className="flex-1">
         <Hero />
-        <Work />
-        <Stack />
-        <Experience />
         <About />
+        <Education />
+        <Skills />
+        <Projects />
+        <Certifications />
+        <ResumeSection />
         <Contact />
       </main>
       <Footer />

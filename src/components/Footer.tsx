@@ -1,5 +1,6 @@
 "use client";
 
+import { personalInfo } from "@/lib/data";
 import { ArrowUp } from "lucide-react";
 
 export default function Footer() {
@@ -10,24 +11,22 @@ export default function Footer() {
   return (
     <footer className="relative mt-auto border-t border-white/10 bg-[#070a11]/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 py-8 sm:flex-row sm:px-8">
-        {/* Left: Branding & Copyright */}
+        {/* Left: Branding & Tagline */}
         <div className="flex flex-col items-center gap-1 sm:items-start">
           <div className="flex items-center gap-2 font-mono text-sm font-bold text-white">
             <span className="flex h-5 w-5 items-center justify-center rounded bg-sky-500/20 text-[10px] text-sky-400">
               M
             </span>
-            <span>Mathesh Waran R</span>
+            <span>{personalInfo.name}</span>
           </div>
           <p className="text-xs text-slate-500">
-            © {new Date().getFullYear()} Mathesh Waran R. Engineered for resilience and scale.
+            MCA Candidate @ SRM IST • {personalInfo.location}
           </p>
         </div>
 
-        {/* Center: Tech Stack note */}
-        <div className="font-mono text-xs text-slate-400">
-          Built with <span className="text-slate-200">Next.js</span>,{" "}
-          <span className="text-slate-200">Tailwind CSS</span> &amp;{" "}
-          <span className="text-slate-200">TypeScript</span>
+        {/* Center: Copyright */}
+        <div className="font-mono text-xs text-slate-400 text-center">
+          © {new Date().getFullYear()} {personalInfo.name}. All verified credentials.
         </div>
 
         {/* Right: Scroll to top */}

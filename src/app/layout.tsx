@@ -2,25 +2,29 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Mathesh Waran R | Full-Stack Engineer & Product Builder",
+  title: "Matheshwaran R | MCA Student & Software Developer",
   description:
-    "Full-stack software engineer and final-year MCA student at SRM. Founder of two live production platforms, Technical Lead of a 14-person intern team, and builder of AI campus research systems.",
+    "Personal portfolio of Matheshwaran R, MCA student at SRM Institute of Science and Technology and BCA graduate from Dr. M.G.R. Chockalingam Arts College. Full-stack web developer, MERN trained, building practical software solutions.",
   keywords: [
-    "Mathesh Waran R",
-    "Full Stack Developer",
-    "Next.js Developer",
-    "TypeScript Engineer",
-    "FastAPI",
-    "PostgreSQL",
+    "Matheshwaran R",
+    "MCA Student",
+    "Software Developer",
+    "Full-Stack Web Developer",
+    "MERN Stack",
+    "React.js",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Python",
+    "SQLite",
     "SRM Institute of Science and Technology",
-    "Maddy BGMI Store",
-    "Maddy RecoveryHub",
+    "Tamil Nadu India",
   ],
-  authors: [{ name: "Mathesh Waran R" }],
+  authors: [{ name: "Matheshwaran R" }],
   openGraph: {
-    title: "Mathesh Waran R | Full-Stack Engineer & Product Builder",
+    title: "Matheshwaran R | MCA Student & Software Developer",
     description:
-      "Engineering resilient platforms for campus, communities, and production scale. Founder of 2 live businesses & tech lead of 14 interns.",
+      "Building practical software solutions with modern web technologies. MCA candidate at SRM IST.",
     type: "website",
     locale: "en_US",
   },
