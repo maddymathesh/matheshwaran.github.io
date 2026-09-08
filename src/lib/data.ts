@@ -62,7 +62,7 @@ export const personalInfo = {
   nationality: "Indian",
   nativity: "Tamil Nadu",
   community: "MBC / Vanniyar",
-  avatarUrl: "/profile.jpg",
+  avatarUrl: "/matheshwaran-profile.jpg",
 };
 
 export const educationData: EducationItem[] = [
